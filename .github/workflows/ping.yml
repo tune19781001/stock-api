@@ -1,8 +1,9 @@
 name: Keep Render API Awake
 
 on:
-  workflow_dispatch:
-  schedule:
+  workflow_dispatch:  # ← 手動実行できるようにする
+  schedule:           # ← 定期実行
+    # 毎日 8:00〜15:30 の間、15分おき（UTC時間で記載）
     - cron: '0 23 * * 1-5'
     - cron: '15 23 * * 1-5'
     - cron: '30 23 * * 1-5'
