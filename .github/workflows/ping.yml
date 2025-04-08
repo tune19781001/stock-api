@@ -1,9 +1,8 @@
 name: Keep Render API Awake
 
 on:
-　workflow_dispatch:
+  workflow_dispatch:
   schedule:
-    # 毎日 8:00〜15:30 の間、15分おき（UTC時間を使う）
     - cron: '0 23 * * 1-5'
     - cron: '15 23 * * 1-5'
     - cron: '30 23 * * 1-5'
@@ -26,5 +25,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Curl the Render API
-        run: |
-          curl -s https://stock-api-wz9e.onrender.com/stock?symbol=7203.T
+        run: curl -s https://stock-api-wz9e.onrender.com/stock?symbol=7203.T
